@@ -1,4 +1,25 @@
 #!/usr/bin/env python3
+"""
+一键编译 + FPM打包工具
+
+本脚本用于自动化构建 CMake/Autotools 项目，并打包为 deb 格式。
+
+【前置依赖】
+本脚本依赖 fpm (Effing Package Management) 工具，而 fpm 依赖 Ruby 环境。
+
+. 安装 Ruby：
+   - macOS (推荐 rbenv): brew install rbenv && rbenv install 3.3.0
+   - Linux (Ubuntu/Debian): sudo apt update && sudo apt install ruby-full
+   - Windows: 前往 https://rubyinstaller.org/ 下载 Ruby+Devkit 安装
+
+. 安装 fpm：
+   - 国内网络建议先换源: gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+   - 执行安装: gem install fpm
+
+【用法示例】
+   python build_deb.py --name mylib --version 1.0.0
+"""
+
 import os
 import shutil
 import subprocess
